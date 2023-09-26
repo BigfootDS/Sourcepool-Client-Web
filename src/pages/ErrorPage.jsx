@@ -7,8 +7,9 @@ export default function ErrorPage(){
 	return(
 		<div id="error-page">
 			<h1>Critical fail on your navigation check.</h1>
-			<p>
-				{error.statusText || error.message}
+			<h3>Error {error.status}</h3>
+			<p>		
+				{error.data || error.statusText || error.message}
 			</p>
 		</div>
 	);

@@ -10,14 +10,36 @@ import {
 import { ServerConnectionProvider } from './contexts/ConnectedServerContext';
 import { AuthProvider } from './contexts/AuthContext';
 import ErrorPage from './pages/ErrorPage';
+import UserSelectionPage from './pages/UserSelectionPage';
+import LandingPage from './pages/LandingPage';
+import ServerSelectionPage from './pages/ServerSelectionPage';
 
 
 const router = createBrowserRouter([
   {
     path:"/",
     element: <App />,
-    errorElement: <ErrorPage />
-  }
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path:"/users/register",
+        element: <UserSelectionPage action="register" />
+      },
+      {
+        path:"/users/login",
+        element: <UserSelectionPage action="login" />
+      },
+      {
+        path:"/landing",
+        element: <LandingPage />
+      },
+      {
+        path:"/servers/select",
+        element: <ServerSelectionPage />
+      }
+    ]
+  },
+  
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
