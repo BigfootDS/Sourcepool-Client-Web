@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useAuth, useAuthDispatch } from "../contexts/AuthContext";
-import { useConnectedServerContext, useConnectedServerDispatchContext } from "../contexts/ConnectedServerContext";
+import { useConnectedServerContext } from "../contexts/ConnectedServerContext";
 
 
 export const UserForm = (props) => {
@@ -14,7 +14,7 @@ export const UserForm = (props) => {
 	const userAuthDispatch = useAuthDispatch();
 
 	const serverConnData = useConnectedServerContext();
-	const serverConnDispatch = useConnectedServerDispatchContext();
+	// const serverConnDispatch = useConnectedServerDispatchContext();
 
 	useEffect(() => {
 		setUsername(userAuthData.username);
