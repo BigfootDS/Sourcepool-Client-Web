@@ -41,7 +41,7 @@ async function serverReducer(currentConnectionState, action){
 					console.log("Invalid server connection data provided, resetting to defaults.");
 					connectionStateEditable = defaultServerConnection;
 				}
-				let apiResult = await fetch(`${connectionStateEditable.address}:${connectionStateEditable.port}/server/clientHandshake`);
+				let apiResult = await fetch(`${connectionStateEditable.address}:${connectionStateEditable.port}/api/server/clientHandshake`);
 				let apiData = await apiResult.json();
 				console.log(apiData);
 				connectionStateEditable = {...action.data, ...apiData};

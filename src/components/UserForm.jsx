@@ -42,7 +42,7 @@ export const UserForm = (props) => {
 			case "register":
 				console.log("registering user");
 				let apiResponse = await fetch(
-					`${serverConnData.address}:${serverConnData.port}/users/`, 
+					`${serverConnData.address}:${serverConnData.port}/api/users/`, 
 					{
 						method:"POST",
 						headers: {
