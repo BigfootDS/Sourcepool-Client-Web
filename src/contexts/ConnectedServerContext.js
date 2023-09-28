@@ -42,6 +42,7 @@ async function serverReducer(currentConnectionState, action){
 					connectionStateEditable = defaultServerConnection;
 				}
 				let apiResult = await fetch(`${connectionStateEditable.address}:${connectionStateEditable.port}/api/server/clientHandshake`);
+				console.log(apiResult);
 				let apiData = await apiResult.json();
 				console.log(apiData);
 				connectionStateEditable = {...action.data, ...apiData};
